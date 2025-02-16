@@ -16,4 +16,3 @@ let myIdealWeight = 73*9/10;
 let myMaxWeight = 73;
 let myMinWeight = 73*8/10;
 console.log("My ideal weight:" + myIdealWeight +" kgs " + "/ My MAX weight:" + myMaxWeight + " kgs " + "/ My MIN weight:" + myMinWeight + " kgs ");
-
