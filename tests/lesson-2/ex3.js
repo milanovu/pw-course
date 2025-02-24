@@ -8,8 +8,21 @@ const myNumber = 10;
 
 if( myNumber > 0){
     console.log("Giá trị bạn nhập là số dương")
+} 
+if ( myNumber < 0 ){
+    console.log("Giá trị bạn nhập là số âm")
+} 
+
+if (myName === 0){
+    console.log("Giá trị bạn nhập là số 0")
+}
+
+/* If Else
+if( myNumber > 0){
+    console.log("Giá trị bạn nhập là số dương")
 } else if ( myNumber < 0 ){
     console.log("Giá trị bạn nhập là số âm")
 } else {
     console.log("Giá trị bạn nhập là số 0")
 }
+*/
