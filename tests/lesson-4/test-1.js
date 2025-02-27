@@ -100,9 +100,11 @@ console.log("-----");
 function decryptCode(code) {
     let decryptedCode = "";
     for (let character of code) {
-        if (character === character.toUpperCase()) {
+        if (character === " ") {
+            decryptedCode += " ";
+        } else if (character === character.toUpperCase()) {
             decryptedCode += character.toLowerCase();
-        } else if (character === character.toLowerCase()) {
+        } else {
             decryptedCode += character.toUpperCase();
         }
     }
