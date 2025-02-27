@@ -40,7 +40,6 @@ function launchShip(crew) {
 }
 
 // Cach 2
-
 function launchShip(crew) {
     return `Chuẩn bị khởi động! Phi hành đoàn gồm: ${crew.join(",")} sẽ đồng hành cùng bạn trong chuyến phiêu lưu ${mission}!`;
 }
@@ -83,7 +82,7 @@ function convertTimeToHex(time) {
 // Sau đó, gọi hàm convertTimeToHex với thời gian là 120 giây và in kết quả ra console. 
 console.log(`3. Hành tinh kỳ lạ `);
 
-console.log(`Thời gian hiện tại của hành tinh bí ẩn là: ${convertTimeToHex(120)}s`);
+console.log(`Thời gian hiện tại của hành tinh bí ẩn theo Hexadecimal là: ${convertTimeToHex(120)} seconds`);
 
 console.log("-----");
 
@@ -97,6 +96,7 @@ console.log("-----");
 // - Chữ cái viết hoa sẽ được chuyển thành chữ cái viết thường. 
 // - Ví dụ: Decrypt Code sẽ được giải mã thành dECRYPT cODE. 
 
+// Cách 1: for ... of 
 function decryptCode(code) {
     let decryptedCode = "";
     for (let character of code) {
@@ -111,10 +111,29 @@ function decryptCode(code) {
     return decryptedCode;
 }
 
+// Cách 2: for with i
+function decryptCode2(code) {
+    let decryptedCode2 = "";
+    for (let i = 0; i < code.length; i++) {
+        let character = code[i];
+        if (character === " ") {
+            decryptedCode2 += " ";
+        } else if (character === character.toUpperCase()) {
+            decryptedCode2 += character.toLowerCase();
+        } else {
+            decryptedCode2 += character.toUpperCase();
+        }
+    }
+    return decryptedCode2;
+
+}
+
 // Sau đó, gọi hàm decryptCode với mật mã là K12 Challenge và in kết quả ra console. 
 console.log(`4. Khám phá kho báu`);
 
 console.log(`DONE! Mật Mã để giải mã kho báu là: "${decryptCode('K12 Challenge')}"`);
+
+console.log(`DONE! Mật Mã để giải mã kho báu là: "${decryptCode2('K12 Challenge')}"`);
 
 console.log("-----");
 
