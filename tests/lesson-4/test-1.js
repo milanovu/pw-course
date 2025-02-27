@@ -39,7 +39,7 @@ function launchShip(crew) {
     return (`Chuẩn bị khởi động! Phi hành đoàn gồm: ${member} sẽ đồng hành cùng bạn trong chuyến phiêu lưu ${mission}!`);
 }
 
-// Cach 2
+// Cach 2: dùng join
 function launchShip(crew) {
     return `Chuẩn bị khởi động! Phi hành đoàn gồm: ${crew.join(",")} sẽ đồng hành cùng bạn trong chuyến phiêu lưu ${mission}!`;
 }
@@ -112,28 +112,27 @@ function decryptCode(code) {
 }
 
 // Cách 2: for with i
-function decryptCode2(code) {
-    let decryptedCode2 = "";
+function decryptCode(code) {
+    let decryptedCode = "";
     for (let i = 0; i < code.length; i++) {
         let character = code[i];
         if (character === " ") {
-            decryptedCode2 += " ";
+            decryptedCode += " ";
         } else if (character === character.toUpperCase()) {
-            decryptedCode2 += character.toLowerCase();
+            decryptedCode += character.toLowerCase();
         } else {
-            decryptedCode2 += character.toUpperCase();
+            decryptedCode += character.toUpperCase();
         }
     }
-    return decryptedCode2;
-
+    return decryptedCode;
 }
 
 // Sau đó, gọi hàm decryptCode với mật mã là K12 Challenge và in kết quả ra console. 
 console.log(`4. Khám phá kho báu`);
 
-console.log(`DONE! Mật Mã để giải mã kho báu là: "${decryptCode('K12 Challenge')}"`);
+let encryptedMessage = decryptCode('K12 Challenge');
 
-console.log(`DONE! Mật Mã để giải mã kho báu là: "${decryptCode2('K12 Challenge')}"`);
+console.log(`DONE! Mật Mã để giải mã kho báu là: "${encryptedMessage}".`);
 
 console.log("-----");
 
@@ -146,7 +145,6 @@ console.log("-----");
 function returnToEarth() {
     console.log("Chuẩn bị trở về Trái Đất!");
 }
-
 returnToEarth();
 
 console.log("-----");
